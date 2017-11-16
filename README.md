@@ -75,3 +75,7 @@ Configuration comes from `appSettings.json`
 | real.url | The service you are wrapping. Can be any URL                    |
 | match    | A regular expression that matches the URLs you want to replace  |
 |          | `__admin/history` is always reserved for this history json blob |
+
+## Links
+
+This wouldn't be possibe without [SharpReverseProxy](https://github.com/SharpTools/SharpReverseProxy)
