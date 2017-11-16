@@ -13,6 +13,18 @@ This lets you rewrite HTTP requests to HTTPS endpoints, so becomes useful if you
 | --- | ----------- |
 | /__admin/history | Historical items as a json object |
 
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| When     | DateTimeOffset | Utc - when the call was made |
+| ProxyResult.ProxyStatus | int | `1` if the call was matched and proxied, `0` if the call was unmatched |
+| ProxyResult.HttpStatusCode | int | The status code returned from the `ProxiedUri` |
+| ProxyResult.OriginalUri | string | The URI original requested |
+| ProxyResult.ProxiedUri | string | The URI this app fetched instead |
+| ProxyResult.Elapsed | TimeSpan | The time taken for the call |
+| ProxyResult.Elipsed | TimeSpan | The time taken to process plus `Elapsed` time |
+
+### Example: GET __admin/history
+
 ```javascript
 [{
   "When": "2017-11-16T22:40:22.7161453+00:00",
